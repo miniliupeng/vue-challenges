@@ -46,7 +46,7 @@ const age = ref(2)
 watch(age, () => {
   console.log(eleRef.value)
 }, {
-  flush: 'post'
+  flush: 'post' // 能访问被 Vue 更新之后的DOM
 })
 age.value = 18
 </script>

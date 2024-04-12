@@ -12,6 +12,9 @@ watch(state, () => {
  * 修改以下代码使watch回调被触发
  *
 */
+// state.value.count = 2
+
+
 // 法一、
 // state.value = {
 //   count: 2

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import TreeComponent from './TreeComponent.vue'
 export interface TreeData {
   key: string
   title: string
@@ -9,7 +8,7 @@ defineProps<{ data?: TreeData[] }>()
 </script>
 
 <template>
-  <div v-for="item in data" :key="item.key">
+  <div v-for="item in data" :key="item.key" style="margin-left: 16px;">
     {{ item.title }}
     <TreeComponent v-if="!!item.children?.length" :data="item.children" />
   </div>

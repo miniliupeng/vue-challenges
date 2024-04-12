@@ -14,4 +14,3 @@ counter.value = 1
 console.log(counter.value)
 
 </script>
-

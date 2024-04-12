@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// import capitalize from './capitalize.vue'
+import capitalize from './capitalize.vue'
 import VFocus from './VFocus.vue'
 import VDebounceClick from './VDebounceClick.vue'
 import VActive from './vActive.vue'
@@ -10,11 +10,11 @@ import VIModel from './VIModel.vue'
 
 <template>
   <div>
-    <!-- <capitalize/> -->
+    <capitalize/>
     <!-- <VFocus /> -->
     <!-- <VDebounceClick /> -->
     <!-- <VActive /> -->
-    <VIModel />
+    <!-- <VIModel /> -->
   </div>
 </template>
 

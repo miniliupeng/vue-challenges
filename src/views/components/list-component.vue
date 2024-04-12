@@ -1,19 +1,46 @@
+
 <script setup lang="tsx">
+// 最佳实践
+import { ref, toRef, toRefs } from 'vue'
 import type { FComponentProps } from './fun'
 
-const props =  defineProps<FComponentProps>()
+const props = defineProps<FComponentProps>()
 const emit = defineEmits(['toggle'])
+const count = ref(0)
+const { list, info } = props
 
-const ListComponent = ({ list, activeIndex }: FComponentProps) => {
+const activeIndex = toRef(props, 'activeIndex')
+const render = () => {
   return (
-    <ul>
+    <ul class="list">
+      {info.name}
+      {list.map((item, index) => {
+        return (
+          <li
+            style={{ color: activeIndex.value === index ? 'red' : '' }}
+            onClick={() => emit('toggle', index)}
+          >
+            {item.name}
+            {count.value}
+          </li>
+        )
+      })}
+    </ul>
+  )
+}
+
+// render 或 ListComponent 都可
+
+const ListComponent = ({ list, activeIndex, count }: FComponentProps) => {
+  return (
+    <ul class="list">
       {list.map((item, index) => {
         return (
           <li
             style={{ color: activeIndex === index ? 'red' : '' }}
             onClick={() => emit('toggle', index)}
           >
-            {item.name}
+            {item.name}{count}
           </li>
         )
       })}
@@ -23,7 +50,13 @@ const ListComponent = ({ list, activeIndex }: FComponentProps) => {
 </script>
 
 <template>
-  <ListComponent v-bind="props" />
+  <!-- <render/> -->
+  <!-- <component :is="render()"></component> -->
+  <ListComponent v-bind="props" :count="count" />
 </template>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.list {
+  color: #bdbdbd;
+}
+</style>

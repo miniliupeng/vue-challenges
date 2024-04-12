@@ -7,6 +7,10 @@ import Composition from './views/composition/index.vue'
 import Directives from './views/Directives/index.vue'
 import Utility from './views/Utility/index.vue'
 import WebComponents from './views/WebComponents/index.vue'
+import BuiltIns from './views/BuiltIns/index.vue'
+import Css from './views/Css/index.vue'
+
+
 
 
 
@@ -28,11 +32,14 @@ import WebComponents from './views/WebComponents/index.vue'
   </header>
 
   <RouterView /> -->
+  <!-- <Components /> -->
   <!-- <ComposableFunction /> -->
   <!-- <Composition /> -->
   <!-- <Directives /> -->
-  <!-- <Utility /> -->
-  <WebComponents />
+  <Utility />
+  <!-- <WebComponents /> -->
+  <!-- <BuiltIns /> -->
+  <!-- <Css/> -->
 </template>
 
 <style scoped>

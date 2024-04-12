@@ -1,5 +1,6 @@
 <script setup lang="ts">
-// import Toggle from './toggle.vue'
+import Counter from './counter.vue';
+import Toggle from './toggle.vue'
 import LocalStorage from './localStorage.vue'
 import Mouse from './mouse.vue'
 
@@ -9,6 +10,7 @@ import Mouse from './mouse.vue'
 <template>
   <div>
     <!-- <Toggle /> -->
+    <!-- <Counter /> -->
     <!-- <LocalStorage/> -->
     <Mouse />
   </div>

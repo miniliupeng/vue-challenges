@@ -18,7 +18,11 @@ export const useCounter = (initialValue = 0, { min, max }: UseCounterOptions = {
     max && count.value < max && count.value++
   }
   const dec = () => {
-    min && count.value > min && count.value--
+    if (min !== undefined) {
+      count.value > min && count.value--
+    } else {
+      count.value--
+    }
   }
   const reset = () => {
     count.value = initialValue
